@@ -10,9 +10,9 @@ const weather_body = document.querySelector(".weather-body");
 
 async function checkWeather(city) {
   const api_key = "087ad834898d7bd54cd5cce65cbecab7";
-  const url = `https://api.openweathermap.org/data/2.5/weather?id=${city}&appid=${api_key}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`
 
-  const weather_data = await fetch("${url}").then((respone) => response.json());
+  const weather_data = await fetch("${url}").then((respone) => Response.json());
 
   if (weather_data.cod === "404") {
     location_not_found.style.display = "flex";
